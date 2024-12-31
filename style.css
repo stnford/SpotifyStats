@@ -1,0 +1,95 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    background-color: black;
+}
+
+
+h1{
+    margin-top: 10vh;
+    font-family:'Spotify Mix', 'Roboto';
+    font-weight: bold;
+    text-align: center;
+    color: #63cc6b;   
+}
+
+sup{
+    vertical-align: super;
+    font-size: 0.5em;
+}
+
+.centered{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-top: 50%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#authBox{
+    border: 3px solid #63cc6b;
+    border-radius: 25px;
+    max-width: 25vw;
+    min-width: 220px;
+    width: 50%;
+    height: 50vh;
+    margin-top: 10vh;
+}
+
+#login-button{
+    font-family:'Spotify Mix', 'Roboto';
+    font-weight: bold;
+    font-style: normal;
+    width: 75%;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+}
+
+#logout-button{
+    margin-top: 4%;
+    font-size: small;
+    width: 7%;
+    height: 50px;
+    border-radius: 15px;
+}
+
+
+button{
+    display: flex;
+    font-family:'Spotify Mix', 'Roboto';
+    font-size: 125%;
+    font-weight: bold;
+    font-style: normal;
+    width: 75%;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+    background-color: #63cc6b;
+    margin-top: none;
+    border: none;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    width: 200px;
+    height: 100px;
+    cursor: default;
+}
+
+button:hover{
+    transform: translateY(-10px);
+    cursor: pointer;
+    background-color: black;
+    color: #63cc6b;
+}
+
+#option-container{
+    display: flex;
+    border: 3px solid #63cc6b;
+    border-radius: 25px;
+    max-width: 25vw;
+    min-width: 220px;
+    width: 50%;
+    height: 50vh;
+    margin-top: 10vh;
+}
