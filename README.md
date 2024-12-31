@@ -4,6 +4,7 @@ This web app uses the Spotify API to read users top tracks and artists from diff
 Run:
 
     node server.js  
-    OR
+OR
+    
     nodemon server.js
 to start the server
