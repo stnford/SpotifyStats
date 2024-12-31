@@ -1,10 +1,10 @@
 # SpotifyStats
 This web app uses the Spotify API to read users top tracks and artists from different time frames along with the option to create playlists from their top tracks.
 
-Run:
+You must have Express, Path, and Node installed.
+To start the server run:
 
     node server.js  
-OR
+Or
     
     nodemon server.js
-to start the server
