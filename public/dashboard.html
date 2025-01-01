@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>SpotifyStats</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Hello {display-name}!<br>What would you like to do?</h1>
+    <h1>Hello <span id="display-name"></span>!<br>What would you like to do?</h1>
     <div class="centered" id="option-container">
-        <button>See top tracks</button>
-        <button>See top artists</button>
+        <button id="tracks-button">See top tracks</button>
+        <button id="artists-button">See top artists</button>
     </div>
     <button id="logout-button">Logout</button>
-    <script src="app.js"></script>
+    <script src="dashboard.js"></script>
 </body>
 </html>

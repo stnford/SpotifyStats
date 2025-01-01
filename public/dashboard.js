@@ -2,16 +2,11 @@ const profileUrl = 'https://api.spotify.com/v1/me';
 const redirectUri = 'http://localhost:5500';
 const accessToken = window.localStorage.getItem('access_token');
 
-console.log('Access Token:', accessToken);
-console.log('Request Headers:', {
-    Authorization: `Bearer ${accessToken}`,
-});
-
 if (!accessToken) {
     console.error('You must be logged in.');
     window.location.href = 'index.html'; // Redirect to login page
 }else{
-    console.log('Token Scopes:', localStorage.getItem('access_token_scope'));
+    console.log('Token Scopes:', localStorage.getItem('scope'));
     async function fetchProfile() {
         try{
             const result = await fetch("https://api.spotify.com/v1/me", {
@@ -39,12 +34,8 @@ if (!accessToken) {
         .catch((Error) => {
             console.error('Error: ', Error);
         });
-    
-    document.getElementById('logout-button').addEventListener('click', () => {
-        localStorage.clear();
-        window.location.href = redirectUri; // Redirect to login
-    })
 }
+
  document.getElementById('tracks-button').addEventListener('click', () =>{
     try{
         async function fetchTopItems () {
@@ -87,3 +78,10 @@ if (!accessToken) {
         console.error("An error occured while clicking the 'tracks-button", Error);
     }
  })
+
+ document.getElementById('logout-button').addEventListener('click', () => {
+    console.log('wally');
+    localStorage.clear();
+    window.location.href = redirectUri; // Redirect to login
+})
+//  document.getElementById('artists-button').

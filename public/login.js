@@ -70,14 +70,22 @@ const getToken = async code => {
   
     const body = await fetch(url, payload);
     const response = await body.json();
+
+    console.log(response);
+
+    window.localStorage.setItem('access_token', response.access_token); 
+    window.localStorage.setItem('refresh_token', response.refresh_token);
+    window.localStorage.setItem('scope', response.scope);
 }
 
 //validate authentication status through the console
 if(code){
     getToken(code).then(() => {
-        window.location.href = 'dashboard.html';
         console.log("Authentication successful!");
-        // console.log('Authorization code received:', code);
+        console.log('Access Token received:', localStorage.getItem('access_token'));
+        console.log('Refresh Token received:', localStorage.getItem('refresh_token'));
+        console.log('Scope Recieved: ', localStorage.getItem('scope'));
+        window.location.href = 'dashboard.html';
     }).catch(err => {
         console.log("Failed to exchange code for token: ", err);
     });
