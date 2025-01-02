@@ -28,11 +28,6 @@ sup{
     align-items: center;
 }
 
-#display-name{
-    text-decoration:underline;
-    color:#63cc6b;
-}
-
 #authBox{
     border: 3px solid #63cc6b;
     border-radius: 25px;
@@ -65,7 +60,7 @@ sup{
 button{
     display: flex;
     font-family:'Spotify Mix', 'Roboto';
-    font-size: 150%;
+    font-size: 125%;
     font-weight: bold;
     font-style: normal;
     width: 75%;
