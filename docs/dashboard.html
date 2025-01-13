@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpotifyStats</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="dashboard-body">
+    <button id="extended-streaming-button"></button>
+    <h1 id="greeting">Hello <a id="display-name" target="_blank"></a><br>What would you like to do?</h1>
+    <div id="options-results-container">
+        <div class="container" id="options-container">
+            <button id="tracks-button">See top tracks</button>
+            <button id="artists-button">See top artists</button>
+        </div>
+        <div class="container" id="results-container">
+            <div id="radio-and-results">
+                <fieldset id="time-frame-selection">
+                    <div class="time-frame-buttons">
+                        <input type="radio" id="short-term-input" name="time-frame" value="short-term">
+                        <label for="short-term-input" class="button-label">Last 4 Weeks</label>
+                    </div>
+                    <div class="time-frame-buttons">
+                        <div class="test">
+                            <input type="radio" id="med-term-input" name="time-frame" value="mid-term">
+                            <label for="med-term-input" class="button-label">Last 6 Months</label>
+                        </div>
+                    </div>
+                    <div class="time-frame-buttons">
+                        <input type="radio" id="long-term-input" name="time-frame" value="long-term">
+                        <label for="long-term-input" class="button-label">Last Year</label>
+                    </div>
+                </fieldset>
+                <ol id="results-list"></ol>
+            </div>
+        </div>
+    </div>
+    <button id="logout-button">Logout</button>
+</body>
+<footer id="copyright">© 2025 Luke Stanford. All rights reserved.</footer>
+<script src="dashboard.js"></script>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extended Streaming History</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <img src="back-arrow-icon.png" alt="" id="back-arrow">
+    <h1 class="extended-streaming">Request Lifetime Streaming History</h1>
+    <div class="extended-streaming" id="message-box">
+        <p class="extended-streaming">
+            Unfortunately, the Spotify API no longer supports retrieving a 
+            user's all-time streaming history directly. 
+            <br><br>
+            However, if you'd 
+            like an analysis of your listening history over the lifespan of 
+            your account, you can request your Extended Streaming History directly 
+            from Spotify by following these steps:
+        </p>
+        <ol class="extended-streaming">
+            <li class="extended-streaming">Click the “<a href="https://www.spotify.com/us/account/privacy/?flow_ctx=feea4d16-200d-4b00-8b8b-d9dc99fcd84f%3A1736809791">Request from Spotify</a>” button below.</li>
+            <li class="extended-streaming">Scroll down to the section labeled: <br> “Download your Data”.</li>
+            <li class="extended-streaming">Select “Extended streaming history”.</li>
+            <li class="extended-streaming">Click the “Request Data” button.</li>
+        </ol>
+        <p class="extended-streaming">Once you have the file:</p>
+        <ul class="extended-streaming">
+            <li class="extended-streaming">Drag and drop the "my_spotify_data.zip" file onto this page.</li>
+            <li class="extended-streaming">Our tool will automatically analyze it and provide insights into your listening history!</li>
+        </ul>
+    </div>
+    <div id="extended-buttons-container">
+        <button class="extended-button" id="request-button">Request from Spotify</button>
+        <button class="extended-button" id="upload-button">Upload Data</button>
+    </div>
+</body>
+<footer id="copyright">© 2025 Luke Stanford. All rights reserved.</footer>
+<script src="extended-streaming.js"></script>
+</html>
