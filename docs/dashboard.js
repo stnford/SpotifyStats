@@ -1,7 +1,7 @@
 const profileUri = 'https://api.spotify.com/v1/me';
 const topTrackUri = 'https://api.spotify.com/v1/me/top/tracks';
 const topArtistUri = 'https://api.spotify.com/v1/me/top/artists';
-const redirectUri = 'http://localhost:5500';
+const redirectUri = 'https://stnford.github.io/SpotifyStats/';
 const accessToken = window.localStorage.getItem('access_token');
 window.localStorage.setItem('trackNames', null);
 window.localStorage.setItem('artistNames', null);
@@ -15,7 +15,7 @@ document.getElementById('extended-streaming-button').addEventListener('click', (
 });
 
 // log in if needed
-if (!accessToken) {
+if (!accessToken || accessToken == "" || accessToken == null) {
     console.error('You must be logged in.');
     window.location.href = 'index.html'; // Redirect to login page 
 } else {;
@@ -206,6 +206,7 @@ function clearList(listItems){
 }
 
 async function fetchProfile() {
+    console.log("This is the accessToken", accessToken)
     try{
         const result = await fetch(profileUri, {
             method: "GET", 

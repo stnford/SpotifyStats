@@ -1,5 +1,5 @@
 const clientId = 'b26f9b63745d46fe8f2e839bfdb6bc2a';
-const redirectUri = 'http://localhost:5500';
+const redirectUri = 'https://stnford.github.io/SpotifyStats/';
 
 document.getElementById('apple-login-button').addEventListener('click', () => {
     window.open('apple-dashboard.html', '_blank');
@@ -8,6 +8,8 @@ document.getElementById('apple-login-button').addEventListener('click', () => {
 // when the login button is clicked, generate a code, hash it, and verify it. Define your
 //clientID, redirectURI, scopes, the autharization URI, and search params for the URL. 
 document.getElementById('spotify-login-button').addEventListener('click', async() => {
+
+    console.log("Login button clicked!")
 
     //generates the codeVerifier
     const generateRandomString = (length) => {
@@ -79,28 +81,28 @@ const getToken = async code => {
     const body = await fetch(url, payload);
     const response = await body.json();
 
-    console.log(response);
+    console.log("Here is the response: ", response);
 
     window.localStorage.setItem('access_token', response.access_token); 
     window.localStorage.setItem('refresh_token', response.refresh_token);
     window.localStorage.setItem('scope', response.scope);
 }
 
-//validate authentication status through the console
+ //validate authentication status through the console
 if(code){
+    console.log("This is the code: ", code)
     getToken(code).then(() => {
         console.log("Authentication successful!");
         console.log('Access Token received:', localStorage.getItem('access_token'));
         console.log('Refresh Token received:', localStorage.getItem('refresh_token'));
         console.log('Scope Recieved: ', localStorage.getItem('scope'));
-        window.location.href = 'dashboard.html';
+        window.location.href = 'https://stnford.github.io/SpotifyStats/dashboard.html';
     }).catch(err => {
         console.log("Failed to exchange code for token: ", err);
     });
 }else{
     console.log('No code found. Redirecting to login...');
 }
- 
 /*
         Method Definitions
 */

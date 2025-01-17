@@ -184,16 +184,16 @@ li{
 
 
 #time-frame-selection{
-    display: flex;
+    display: none;
     padding: none;
     flex-direction: row;
     border: none;
     padding: 0;
 }
 
-/* #radio-and-results{
-    
-} */
+#radio-and-results{
+    height: 100%;
+}
 
 .test{
     display: flex;
@@ -318,6 +318,10 @@ input[type="radio"]:checked + label {
 
 #upload-button{
     border: 3px dashed #181413;
+}
+
+#upload-button:hover{
+    transform: scale(5px);
 }
 
 h1 .extended-streaming{
