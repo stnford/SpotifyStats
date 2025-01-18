@@ -11,7 +11,7 @@ const redirectUri = 'http://localhost:5500';
 document.getElementById('spotify-login-button').addEventListener('click', async() => {
 
     console.log("Login button clicked!")
-
+    
     //generates the codeVerifier
     const generateRandomString = (length) => {
         const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
