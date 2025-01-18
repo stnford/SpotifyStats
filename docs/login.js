@@ -1,9 +1,10 @@
 const clientId = 'b26f9b63745d46fe8f2e839bfdb6bc2a';
-const redirectUri = 'https://stnford.github.io/SpotifyStats/';
+// const redirectUri = 'https://stnford.github.io/SpotifyStats/';
+const redirectUri = 'http://localhost:5500';
 
-document.getElementById('apple-login-button').addEventListener('click', () => {
-    window.open('apple-dashboard.html', '_blank');
-})
+// document.getElementById('apple-login-button').addEventListener('click', () => {
+//     window.open('apple-dashboard.html', '_blank');
+// })
 
 // when the login button is clicked, generate a code, hash it, and verify it. Define your
 //clientID, redirectURI, scopes, the autharization URI, and search params for the URL. 
@@ -96,7 +97,9 @@ if(code){
         console.log('Access Token received:', localStorage.getItem('access_token'));
         console.log('Refresh Token received:', localStorage.getItem('refresh_token'));
         console.log('Scope Recieved: ', localStorage.getItem('scope'));
-        window.location.href = 'https://stnford.github.io/SpotifyStats/dashboard.html';
+
+        // window.location.href = 'https://stnford.github.io/SpotifyStats/dashboard.html';
+        window.location.href = 'dashboard.html';
     }).catch(err => {
         console.log("Failed to exchange code for token: ", err);
     });
