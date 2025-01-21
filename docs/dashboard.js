@@ -1,8 +1,8 @@
 const profileUri = 'https://api.spotify.com/v1/me';
 const topTrackUri = 'https://api.spotify.com/v1/me/top/tracks';
 const topArtistUri = 'https://api.spotify.com/v1/me/top/artists';
-const redirectUri = 'https://stnford.github.io/SpotifyStats/';
-// const redirectUri = 'http://localhost:5500';
+// const redirectUri = 'https://stnford.github.io/SpotifyStats/';
+const redirectUri = 'http://localhost:5500';
 const accessToken = window.localStorage.getItem('access_token');
 window.localStorage.setItem('trackNames', null);
 window.localStorage.setItem('artistNames', null);
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // log in if needed
-    if (!accessToken || accessToken == "" || accessToken == null) {
+    if (!accessToken || accessToken == "undefined" || accessToken == null) {
         console.error('You must be logged in.');
         window.location.href = 'index.html'; // Redirect to login page 
     } else {;
@@ -28,13 +28,15 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log('Token Scopes:', localStorage.getItem('scope'));
         profileData = await fetchProfile();
         console.log(profileData);
-
+        if(profileData == undefined){
+            window.alert("There was an error retrieving your profile data. Try logging in again.");
+            window.location.href = "index.html"
+        }
         document.getElementById('display-name').innerText = profileData.display_name;
         document.getElementById('display-name').href = profileData.external_urls.spotify;
     }
 
     async function handleTracksButtonClick(){
-        console.log("WOOOOO")
         try{
             let trackNames
             if(window.localStorage.getItem('trackNames') === 'null' ){
@@ -82,12 +84,13 @@ document.addEventListener("DOMContentLoaded", () => {
         const resultsContainer = document.getElementById('results-container');
         const tracksButton = document.getElementById('tracks-button');
         const artistsButton = document.getElementById('artists-button');
+        const optionsContainer = document.getElementById('options-container');
 
         // Check if the results container is hidden
         if (resultsContainer.style.display === 'none' || resultsContainer.style.display === '') {
             resultsContainer.style.display = 'flex'; // Show the results container
             activeButton.innerText = 'Hide Results'; // Update the clicked button text
-
+            resultsContainer.style.
             // Hide the other button
             if (activeButton === tracksButton) {
                 artistsButton.style.display = 'none';
@@ -217,12 +220,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 },
             });
             if (!result.ok) {
+                
                 throw new Error(`Failed to fetch profile: ${result.status} ${result.statusText}`);
             }
             const profileData = await result.json();
             return profileData
 
         }catch(Error){
+            window.alert("There was an error retrieving your profile data. Your session is most likely expired, try loggin out and loggin back in");
+            window.location.href = "index.html"
             console.error('Error fetching profile data:', Error);
         }
 
