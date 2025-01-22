@@ -326,18 +326,15 @@ ul .extended-streaming{
         padding-left: 2%;
         padding-right: 2%;
     }
-
-    #copyright{
+    /* #copyright{
         display: flex;
         justify-content: flex-end;
         align-content: flex-start;
-    }
+    } */
 
     #options-results-container{
         flex-direction: column;
     }
-
-
 }
 
 .show #options-container{
@@ -352,7 +349,7 @@ ul .extended-streaming{
     width: 100%;
     color: rgb(87, 87, 87);
     font-size: 10px;
-    position: absolute;
+    position: fixed;
     bottom:1%;
     left: 1%;
 }

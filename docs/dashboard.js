@@ -85,18 +85,35 @@ document.addEventListener("DOMContentLoaded", () => {
         const tracksButton = document.getElementById('tracks-button');
         const artistsButton = document.getElementById('artists-button');
         const optionsContainer = document.getElementById('options-container');
+        const optionsButton = document.querySelectorAll('.options-button');
+        const mediaQuery = window.matchMedia('(max-width: 800px)');
 
         // Check if the results container is hidden
         if (resultsContainer.style.display === 'none' || resultsContainer.style.display === '') {
             resultsContainer.style.display = 'flex'; // Show the results container
             activeButton.innerText = 'Hide Results'; // Update the clicked button text
-            resultsContainer.style.
+
+            if (mediaQuery.matches) {
+                Object.assign(optionsContainer.style, {
+                    border: 'none',
+                    minHeight: 'fit-content',
+                    height: 'auto',
+                    paddingBottom: '10%'
+                })
+                optionsButton.forEach(button => {
+                    button.style.width = '100px'
+                    button.style.height = '50px'
+                    button.style.fontSize = '75%'
+                })
+            }
             // Hide the other button
-            if (activeButton === tracksButton) {
+            if (activeButton === tracksButton){
                 artistsButton.style.display = 'none';
-            } else if (activeButton === artistsButton) {
+            }
+            if (activeButton === artistsButton) {
                 tracksButton.style.display = 'none';
             }
+            
         } else {
             resultsContainer.style.display = 'none'; // Hide the results container
 
@@ -105,6 +122,17 @@ document.addEventListener("DOMContentLoaded", () => {
             artistsButton.style.display = 'inline-block';
             tracksButton.innerText = 'See top tracks';
             artistsButton.innerText = 'See top artists';
+
+            Object.assign(optionsContainer.style, {
+                border: '3px solid #63cc6b',
+                height: '50vh',
+                paddingBottom: '0%'
+            })
+            optionsButton.forEach(button => {
+                button.style.width = '200px'
+                button.style.height = '100px'
+                button.style.fontSize = '150%'
+            })
 
             // Clear the list
             clearList(htmlList);
