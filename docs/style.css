@@ -60,7 +60,6 @@ a{
 }
 
 button{
-    all: unset;
     display: flex;
     color: black;
     font-family:'Spotify Mix', 'Roboto';
@@ -332,6 +331,10 @@ ul .extended-streaming{
 
     #options-results-container{
         flex-direction: column;
+    }
+
+    button{
+        color: #000;
     }
 }
 
