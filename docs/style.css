@@ -60,6 +60,7 @@ a{
 }
 
 button{
+    all: unset;
     display: flex;
     color: black;
     font-family:'Spotify Mix', 'Roboto';
