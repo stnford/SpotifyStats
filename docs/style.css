@@ -4,11 +4,12 @@
 
 html, body{
     display: flex;
+    position: relative;
     flex-direction: column;
     align-items:center;
     justify-content: space-evenly;
     background-color: #181413;
-    min-height: 475px;
+    min-height: 100%;
     width: 100vw;
     height: 100vh;
     overflow-x: hidden;
@@ -60,6 +61,7 @@ a{
 
 button{
     display: flex;
+    color: black;
     font-family:'Spotify Mix', 'Roboto';
     font-size: 150%;
     font-weight: bold;
@@ -326,11 +328,6 @@ ul .extended-streaming{
         padding-left: 2%;
         padding-right: 2%;
     }
-    /* #copyright{
-        display: flex;
-        justify-content: flex-end;
-        align-content: flex-start;
-    } */
 
     #options-results-container{
         flex-direction: column;
@@ -349,7 +346,7 @@ ul .extended-streaming{
     width: 100%;
     color: rgb(87, 87, 87);
     font-size: 10px;
-    position: fixed;
+    position: absolute;
     bottom:1%;
     left: 1%;
 }
