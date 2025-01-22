@@ -258,6 +258,8 @@ li{
     min-height: fit-content;
     height: 60vh;
     padding: 15px;
+    overflow: hidden;
+    overflow-y: auto;
 }
 
 #extended-streaming-button::after {
