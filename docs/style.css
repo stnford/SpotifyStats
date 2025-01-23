@@ -1,5 +1,24 @@
 *{
     transition: 200ms;
+    font-family: 'Spotify Mix';
+}
+
+@font-face {
+    font-family: 'Spotify Mix';
+    src: url('SpotifyMix-Black.woff2') format('woff2'),
+        url('SpotifyMix-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Spotify Mix';
+    src: url('SpotifyMix-Regular.woff2') format('woff2'),
+        url('SpotifyMix-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }
 
 html, body{
@@ -21,6 +40,7 @@ h1{
     max-width: 75vw;
     margin: 0;
     font-family:'Spotify Mix', 'Roboto';
+    font-weight: 900;
     font-size: 50px;
     font-weight: bold;
     text-align: center;
@@ -34,6 +54,7 @@ sup{
 
 p{
     font-family:'Spotify Mix', 'Roboto';
+    font-weight: 900;
     color: aliceblue;
     margin: 2%;
 }
@@ -47,7 +68,8 @@ p{
 }
 
 a{
-    text-decoration:underline;
+    font-family: 'Spotify Mix', 'Roboto';
+    text-decoration: underline;
     color:#63cc6b;
 }
 

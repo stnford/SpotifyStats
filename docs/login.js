@@ -1,6 +1,6 @@
 const clientId = 'b26f9b63745d46fe8f2e839bfdb6bc2a';
-const redirectUri = 'https://stnford.github.io/SpotifyStats/';
-// const redirectUri = 'http://localhost:5500';
+// const redirectUri = 'https://stnford.github.io/SpotifyStats/';
+const redirectUri = 'http://localhost:5500';
 
 // document.getElementById('apple-login-button').addEventListener('click', () => {
 //     window.open('apple-dashboard.html', '_blank');
@@ -99,8 +99,8 @@ document.addEventListener("DOMContentLoaded", () => {
             console.log('Refresh Token received:', localStorage.getItem('refresh_token'));
             console.log('Scope Recieved: ', localStorage.getItem('scope'));
 
-            window.location.href = 'https://stnford.github.io/SpotifyStats/dashboard.html';
-            // window.location.href = 'dashboard.html';
+            // window.location.href = 'https://stnford.github.io/SpotifyStats/dashboard.html';
+            window.location.href = 'dashboard.html';
         }).catch(err => {
             console.log("Failed to exchange code for token: ", err);
         });
