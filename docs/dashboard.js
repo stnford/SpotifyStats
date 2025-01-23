@@ -1,8 +1,8 @@
 const profileUri = 'https://api.spotify.com/v1/me';
 const topTrackUri = 'https://api.spotify.com/v1/me/top/tracks';
 const topArtistUri = 'https://api.spotify.com/v1/me/top/artists';
-// const redirectUri = 'https://stnford.github.io/SpotifyStats/';
-const redirectUri = 'http://localhost:5500';
+const redirectUri = 'https://stnford.github.io/SpotifyStats/';
+// const redirectUri = 'http://localhost:5500';
 const accessToken = window.localStorage.getItem('access_token');
 window.localStorage.setItem('trackNames', null);
 window.localStorage.setItem('artistNames', null);

@@ -5,8 +5,8 @@
 
 @font-face {
     font-family: 'Spotify Mix';
-    src: url('SpotifyMix-Black.woff2') format('woff2'),
-        url('SpotifyMix-Black.woff') format('woff');
+    src: url('fonts/SpotifyMix-Black.ttf') format('woff2'),
+        url('fonts/SpotifyMix-Black.ttf') format('woff');
     font-weight: 900;
     font-style: normal;
     font-display: swap;
@@ -14,8 +14,17 @@
 
 @font-face {
     font-family: 'Spotify Mix';
-    src: url('SpotifyMix-Regular.woff2') format('woff2'),
-        url('SpotifyMix-Regular.woff') format('woff');
+    src: url('SpotifyMix-Medium.woff2') format('woff2'),
+        url('SpotifyMix-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Spotify Mix';
+    src: url('fonts/SpotifyMix-Regular.ttf') format('woff2'),
+        url('fonts/SpotifyMix-Regular.ttf') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -40,9 +49,8 @@ h1{
     max-width: 75vw;
     margin: 0;
     font-family:'Spotify Mix', 'Roboto';
-    font-weight: 900;
+    font-weight: 500;
     font-size: 50px;
-    font-weight: bold;
     text-align: center;
     color: #63cc6b;   
 }
@@ -54,7 +62,7 @@ sup{
 
 p{
     font-family:'Spotify Mix', 'Roboto';
-    font-weight: 900;
+    font-weight: normal;
     color: aliceblue;
     margin: 2%;
 }
@@ -87,8 +95,7 @@ button{
     color: black;
     font-family:'Spotify Mix', 'Roboto';
     font-size: 150%;
-    font-weight: bold;
-    font-style: normal;
+    font-weight: 500;
     align-items: center;
     justify-content: center;
     border-radius: 25px;
@@ -109,7 +116,7 @@ button:hover{
 
 .login-button{
     font-family:'Spotify Mix', 'Roboto';
-    font-weight: bold;
+    font-weight: normal;
     font-style: normal;
     width: 75%;
     align-items: center;
@@ -167,7 +174,7 @@ ol{
 
 li{
     font-family:'Spotify Mix', 'Roboto';
-    font-weight: bold;
+    font-weight: normal;
     text-align: center;
     color: #63cc6b;   
 }
