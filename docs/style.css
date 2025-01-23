@@ -18,6 +18,7 @@ html, body{
 }
 
 h1{
+    max-width: 75vw;
     margin: 0;
     font-family:'Spotify Mix', 'Roboto';
     font-size: 50px;
@@ -128,6 +129,7 @@ button:hover{
 }
 
 #source-button{
+    display: none;
     min-width: 115px;
     width: 10%;
     max-height: 50px;
@@ -156,7 +158,6 @@ li{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    /* border: 3px solid #63cc6b; */
     border-radius: 25px;
     height: 50%;
     width: 80%
@@ -182,7 +183,6 @@ li{
     flex-direction: column;
     justify-content: space-between;
     margin: 0;
-    padding: 0;
     list-style-position:outside;
     border: 3px solid #63cc6b;
     border-radius: 25px;
@@ -193,21 +193,6 @@ li{
     overflow: hidden;
     overflow-y: auto;
     padding: 10px;
-}
-
-#time-frame-selection{
-    display: none;
-    padding: none;
-    flex-direction: row;
-    border: none;
-    padding: 0;
-}
-
-.time-frame-buttons{
-    display: flex;
-    flex-direction: row;
-    border: 2px solid red;
-    flex-grow: 1;
 }
 
 .button-label{
@@ -240,26 +225,27 @@ li{
     min-width: 115px;
     width: 10%;
     max-height: 50px;
-    height: 200px;
+    height: 5%;
     font-size: smaller;
     content: "Request extended streaming history";
 }
 
-#message-box{
+#message-box {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: flex-start; /* Ensure content starts from the top */
     align-items: center;
     border: 3px solid #63cc6b;
     border-radius: 25px;
     max-width: 25vw;
     min-width: 300px;
     width: 50%;
-    min-height: fit-content;
-    height: 60vh;
-    padding: 15px;
-    overflow: hidden;
-    overflow-y: auto;
+    height: 60vh; /* Fixed height for proper scrolling */
+    box-sizing: border-box; /* Include padding and border in the height */
+    padding-inline: 15px;
+    padding-block: 10px;
+    overflow-y: auto; /* Enable vertical scrolling */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 #extended-streaming-button::after {
@@ -313,12 +299,6 @@ ul .extended-streaming{
     text-align: left;
 }
 
-@media(max-width: 600px){
-    #extended-streaming-button{ 
-        display: none;
-    }
-}
-
 @media(max-width: 1400px){
     #extended-streaming-button{
         font-size: x-small;
@@ -326,17 +306,75 @@ ul .extended-streaming{
 }
 
 @media(max-width: 800px){
+
+    body, html{
+        justify-content: flex-start;
+        overflow-x: hidden;
+        height: 90vh;
+        overflow: auto;
+    }
+
+    h1.extended-streaming{
+        padding-top: 10%;
+        font-size: 45px;
+    }
+
+    #extended-streaming-button{
+        position: absolute;
+        top: 2%;
+        right: 5%;
+        min-width: none;
+        width: 3%;
+        height: 3%;
+    }
+
+    #title{
+        padding-top: 15%;
+        padding-bottom: 10%;
+        padding-left: 2%;
+        padding-right: 2%;
+    }
+
     #greeting{
+        padding-top: 15%;
+        padding-bottom: 10%;
         padding-left: 2%;
         padding-right: 2%;
     }
 
     #options-results-container{
         flex-direction: column;
+        padding-bottom: 10%;
+    }
+
+    #message-box{
+        width: 95%;
+    }
+
+    #upload-button{
+        display: none;
     }
 
     button{
         color: #000;
+    }
+}
+
+@media(max-width: 525px){
+    h1{
+        padding-top: 10%;
+        font-size: 40px;
+    }
+    
+    #request-button{
+        margin-top: 5%;
+    }
+}
+
+@media(max-width:475px){
+    h1.extended-streaming{
+        font-size: 30px;
+        padding-bottom: 10%;
     }
 }
 
