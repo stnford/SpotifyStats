@@ -283,7 +283,8 @@ li{
     max-width: 25vw;
     min-width: 300px;
     width: 50%;
-    height: 60vh; /* Fixed height for proper scrolling */
+    height: fit-content; /* Fixed height for proper scrolling */
+    max-height: 60vh;
     box-sizing: border-box; /* Include padding and border in the height */
     padding-inline: 15px;
     padding-block: 10px;
@@ -292,7 +293,7 @@ li{
 }
 
 #extended-streaming-button::after {
-    content: 'Extended streaming history';
+    content: 'Extended history';
     display: block;
 }
 
@@ -335,11 +336,13 @@ h1 .extended-streaming{
 ol .extended-streaming{
     color: aliceblue;
     text-align: left;
+    line-height: 1.5;
 }
 
 ul .extended-streaming{
     color: aliceblue;
     text-align: left;
+    line-height: 1.5;
 }
 
 @media(max-width: 1400px){
@@ -415,7 +418,7 @@ ul .extended-streaming{
 }
 
 @media(max-width:475px){
-    h1.extended-streaming{
+    h1 .extended-streaming{
         font-size: 30px;
         padding-bottom: 10%;
     }
