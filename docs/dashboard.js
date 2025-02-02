@@ -3,6 +3,7 @@ const topTrackUri = 'https://api.spotify.com/v1/me/top/tracks';
 const topArtistUri = 'https://api.spotify.com/v1/me/top/artists';
 const redirectUri = 'https://stnford.github.io/SpotifyStats/';
 // const redirectUri = 'http://localhost:5500';
+
 const accessToken = window.localStorage.getItem('access_token');
 window.localStorage.setItem('trackNames', null);
 window.localStorage.setItem('artistNames', null);
@@ -28,10 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log('Token Scopes:', localStorage.getItem('scope'));
         profileData = await fetchProfile();
         console.log(profileData);
-        if(profileData == undefined){
-            window.alert("There was an error retrieving your profile data. Try logging in again.");
-            window.location.href = "index.html"
-        }
         document.getElementById('display-name').innerText = profileData.display_name;
         document.getElementById('display-name').href = profileData.external_urls.spotify;
     }
@@ -239,7 +236,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     async function fetchProfile() {
-        console.log("This is the accessToken", accessToken)
         try{
             const result = await fetch(profileUri, {
                 method: "GET", 
@@ -248,14 +244,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 },
             });
             if (!result.ok) {
-                
+        
                 throw new Error(`Failed to fetch profile: ${result.status} ${result.statusText}`);
             }
             const profileData = await result.json();
             return profileData
 
         }catch(Error){
-            window.alert("There was an error retrieving your profile data. Your session is most likely expired, try loggin out and loggin back in");
+            window.alert("Dear user,\nThere was an error fetching your profile data.\nThis app is currently in developer mode and only approved users can be logged in.\n\nPlease contact Luke to be added to the list of approved users. If you've already done so your session is most likely expired, try logging back in.\n\nStay Cool,\nLuke \n( ˘ ³˘)♥︎");
             window.location.href = "index.html"
             console.error('Error fetching profile data:', Error);
         }

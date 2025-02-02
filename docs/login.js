@@ -1,6 +1,6 @@
 const clientId = 'b26f9b63745d46fe8f2e839bfdb6bc2a';
-// // const redirectUri = 'https://stnford.github.io/SpotifyStats/';
-const redirectUri = 'http://localhost:5500';
+const redirectUri = 'https://stnford.github.io/SpotifyStats/';
+// const redirectUri = 'http://localhost:5500';
 
 // document.getElementById('apple-login-button').addEventListener('click', () => {
 //     window.open('apple-dashboard.html', '_blank');
@@ -92,12 +92,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //validate authentication status through the console
     if(code){
-        console.log("This is the code: ", code)
         getToken(code).then(() => {
-            console.log("Authentication successful!");
-            console.log('Access Token received:', localStorage.getItem('access_token'));
-            console.log('Refresh Token received:', localStorage.getItem('refresh_token'));
-            console.log('Scope Recieved: ', localStorage.getItem('scope'));
+            // console.log("Authentication successful!");
+            // console.log('Access Token received:', localStorage.getItem('access_token'));
+            // console.log('Refresh Token received:', localStorage.getItem('refresh_token'));
+            // console.log('Scope Recieved: ', localStorage.getItem('scope'));
 
             window.location.href = 'https://stnford.github.io/SpotifyStats/dashboard.html';
             // window.location.href = 'dashboard.html';
@@ -107,9 +106,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }else{
         console.log('No code found. Redirecting to login...');
     }
-    /*
-            Method Definitions
-    */
 
     //hashing the codeVerifier using the sha256 algorithm.
     //This is the value that will be sent within the user authorization request

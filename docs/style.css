@@ -57,6 +57,8 @@ h1{
 
 sup{
     vertical-align: super;
+    font-family: 'Spotify Mix', 'Roboto';
+    font-weight: bold;
     font-size: 0.5em;
 }
 
@@ -67,18 +69,28 @@ p{
     margin: 2%;
 }
 
+a{
+    font-family: 'Spotify Mix', 'Roboto';
+    text-decoration: underline;
+    color:#63cc6b;
+}
+
+#develolper-message{
+    width: 90%;
+    position:absolute;
+    top: 2vw;
+    margin-bottom: 5%;
+    color: #a9a9a9;
+    font-size: 60%;
+    text-align:center;
+}
+
 .centered{
     display: flex;
     flex-direction: column;
     width: 50%;
     justify-content: space-evenly;
     align-items: center;
-}
-
-a{
-    font-family: 'Spotify Mix', 'Roboto';
-    text-decoration: underline;
-    color:#63cc6b;
 }
 
 #authBox{
@@ -116,7 +128,7 @@ button:hover{
 
 .login-button{
     font-family:'Spotify Mix', 'Roboto';
-    font-weight: normal;
+    font-weight: 500;
     font-style: normal;
     width: 75%;
     align-items: center;
@@ -132,7 +144,7 @@ button:hover{
     align-items: center;
     justify-content: center;
     border-radius: 25px;
-} */
+}
 #soundcloud-login-button{
     display: none;
     color: aliceblue;
@@ -146,7 +158,7 @@ button:hover{
 }
 #apple-login-button:hover, #soundcloud-login-button:hover{
     background-color: #181413;
-}
+} */
 
 #logout-button{
     /* margin-top: 4%; */
@@ -164,19 +176,6 @@ button:hover{
     max-height: 50px;
     height: 200px;
     font-size: smaller;
-}
-
-ol{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-}
-
-li{
-    font-family:'Spotify Mix', 'Roboto';
-    font-weight: normal;
-    text-align: center;
-    color: #63cc6b;   
 }
 
 .container{
@@ -222,6 +221,21 @@ li{
     overflow: hidden;
     overflow-y: auto;
     padding: 10px;
+}
+
+
+ol{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+li{
+    font-family:'Spotify Mix', 'Roboto';
+    font-weight: normal;
+    line-height: 200%;
+    text-align: right;
+    color: #63cc6b;   
 }
 
 .button-label{
